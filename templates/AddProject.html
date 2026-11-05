@@ -1,0 +1,27 @@
+{% extends "Layout.html" %}
+{% block title %}Add Project{% endblock %}
+
+{% block content %}
+
+
+<!-- form sends project info to update to add route -->
+<form action="{{ url_for('add') }}" method="POST" enctype="multipart/form-data">
+
+    <div class = "add-project-form">
+        <h1>Add Project</h1>
+        <label for="title">Project Title</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="description">Description</label>
+        <textarea id="description" name="description" required></textarea>
+
+        <label for="image">Project Image</label>
+        <input type="file" id="image" name="image" accept="image/*" required>
+
+        <button type="submit">Add Project</button>
+
+    </div>
+    
+</form>
+
+{% endblock %}

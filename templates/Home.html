@@ -1,0 +1,17 @@
+{% extends "Layout.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+        <section class ="about">
+                <figure>
+                        <img src="{{ url_for('static', 
+                        filename='images/myself.jpg') }}" alt=" My Profile"> 
+                </figure>
+                <div class = "about-text">
+                        <h1>About Me</h1>
+                        <p>Hi! I am Toby Wong, a year 2 student studying electronic and computer engineering in Nanyang Polytechnic.I enjoy
+                        solving problems through programming and learning new technologies that can be applied
+                        to real-world projects.This portfolio showcases my skills and some of the projects I have completed.</p>
+                </div>
+        </section>
+        
+{% endblock %}

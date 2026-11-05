@@ -1,0 +1,27 @@
+
+{% extends "Layout.html" %}
+{% block title %}Projects{% endblock %}
+{% block content %}
+        <h1>My Projects</h1>
+        <div class="button">
+            <!-- opens url to edit project -->
+            <a href="{{ url_for('add') }}" class="add-project">+ Add Project</a>
+        </div>
+        <div class = "project-container">
+            {% for project in projects %}
+                    <div class = "project-card">
+                        <!-- project info taken from database -->
+                        <h2>{{ project['title'] }}</h2>
+                        <img src="{{ url_for('image', id=project['id']) }}">
+                        <p>{{ project['description'] }}</p>
+                        <div class = "project-buttons">
+                            <a href="{{ url_for('edit', id=project['id']) }}" class ="edit-button">Edit</a>
+                            <a href="{{ url_for('delete', id=project['id']) }}" class = "del-button">Delete</a>
+                        </div>
+                    </div>
+                {% endfor %}
+        </div>
+                
+
+{% endblock %}
+
